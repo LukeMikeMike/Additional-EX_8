@@ -5,11 +5,6 @@ var old;
 function getLength(){
     listDiv.addEventListener('mousedown', function(event){
         liElement = event.target;
-        //parOld = document.querySelector('.old');
-        //parOld.innerHTML = '';
-        //parOld.classList = '';
-        // console.log(parOld);
-
         var first = document.querySelector('p');
         if (first) {
             old.removeChild(first);
