@@ -1,0 +1,9 @@
+.paragraph {
+    color:red;
+    display:none;
+}
+
+.newstyle {
+    color: blue;
+    display: block;
+}

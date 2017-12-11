@@ -1,25 +1,29 @@
-var listDiv = document.querySelector('#div1');
-var old;
 
 
-function getLength(){
-    listDiv.addEventListener('mousedown', function(event){
-        liElement = event.target;
-        var first = document.querySelector('p');
-        if (first) {
-            old.removeChild(first);
+document.addEventListener('click', function(event){
+
+ var liEl = document.querySelectorAll('li');
+  console.log(liEl);
+
+    if (event.target.nodeName === 'LI'){
+
+     greenEl = document.querySelector(".green");
+     orangeEl = document.querySelector(".orange");
+     blueEl = document.querySelector(".blue");
+     
+     if (greenEl && orangeEl && blueEl){
+     greenEl.classList.remove('green');
+     orangeEl.classList.remove('orange');
+     blueEl.classList.remove('blue');
+     }
+
+      var listElement = event.target;
+        if (listElement.nextElementSibling && listElement.previousElementSibling){
+         listElement.classList.add('green')
+         listElement.nextElementSibling.classList.add('blue');
+         listElement.previousElementSibling.classList.add('orange')
         }
-        
-        if (event.target = 'li'){
-        var par = document.createElement('p');  
-        par.innerHTML = event.target.textContent.length;
-        liElement.appendChild(par);
-        var first = document.querySelector('p');
-        //stary do usunięcia htmlu w następnym kliknięciu
-        old = event.target;
-
-        }    
-    })
 }
 
-getLength();
+})
+
